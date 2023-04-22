@@ -1,0 +1,49 @@
+.navbar {
+  display: flex;
+  flex-flow: row nowrap;
+  background: #4d4d4d;
+  height: 90px;
+  justify-content: space-around;
+}
+
+.navbar > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-logo {
+  flex-grow: 2;
+}
+
+.logo-titulo {
+  color: white;
+  font-size: 24px;
+}
+
+.logo-img > img {
+  height: 80px;
+}
+
+.navbar-link {
+  flex-grow: 4;
+}
+
+.navbar-link > ul {
+  display: flex;
+  gap: 15px;
+}
+
+.link-item > a {
+  color: rgb(189, 189, 189);
+  font-size: 18x;
+}
+
+.link-item:first-child > a {
+  color: white;
+}
+
+.link-item:last-child > a {
+  color: green;
+}
