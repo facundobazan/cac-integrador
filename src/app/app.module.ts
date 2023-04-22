@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ContentComponent } from './components/content/content.component';
 import { ContentBottomComponent } from './components/content-bottom/content-bottom.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ContentBottomComponent } from './components/content-bottom/content-bott
     NavbarComponent,
     HeaderComponent,
     ContentComponent,
-    ContentBottomComponent
+    ContentBottomComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
