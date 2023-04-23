@@ -1,8 +1,14 @@
+*{
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #2f7482;
+}
+
 .navbar {
   display: flex;
   flex-flow: row nowrap;
-  background: #4d4d4d;
-  height: 90px;
+  background: #373d42;
+  height: 80px;
   justify-content: space-around;
 }
 
@@ -19,7 +25,7 @@
 
 .logo-titulo {
   color: white;
-  font-size: 24px;
+  font-size: 2.2vw;
 }
 
 .logo-img > img {
@@ -36,8 +42,7 @@
 }
 
 .link-item > a {
-  color: rgb(189, 189, 189);
-  font-size: 18x;
+  color: #87949a;
 }
 
 .link-item:first-child > a {
@@ -45,5 +50,9 @@
 }
 
 .link-item:last-child > a {
-  color: green;
+  color: #0a8c4d;
+}
+
+a:hover{
+  color: #0a8c4d;
 }
