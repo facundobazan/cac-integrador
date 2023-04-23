@@ -26,7 +26,9 @@
 
 .card {
     width: 20vw;
-    height: 500px;
+    height: 35vw;
+    min-width: 200px;
+    min-height: 400px;
     overflow: hidden;
     border-radius: 5px;
     border: 1px solid #eee;
@@ -34,7 +36,9 @@
 
 .card-img {
     height: 20vw;
+    min-height: 200px;
     width: 20vw;
+    min-width: 200px;
     max-width: 100%;
     object-fit: cover;
     object-position: center;
@@ -55,7 +59,8 @@
     text-decoration: none;
     letter-spacing: -0.8px;
     padding: 1px 4px;
-    font-size: .8vw;
+    font-size: .8rem;
+    font-size-adjust: .5rem;
     font-weight: 600;
     border-radius: 5px;
     color: #fff;
@@ -87,7 +92,7 @@
 .card-text {
     font-size: .8rem;
     text-align: left;
-    height: 80%;
     overflow-y: scroll;
+    padding-bottom: 5px;
     margin-bottom: 5px;
 }
