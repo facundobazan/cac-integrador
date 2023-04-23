@@ -7,7 +7,8 @@
 }
 
 .contact-form{
-    width: 500px;
+    width: 50vw;
+    min-width: 500px;
     text-align: center;
 }
 
@@ -16,17 +17,17 @@
 }
 
 .title {
-    font-size: 20px;
+    font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 5px;
 }
 
 .title-before, .title-after{
-    font-size: 8px;
+    font-size: 0.6rem;
 }
 
 .title-after {
-    margin-bottom: 5px;
+    margin-bottom: .5rem;
 }
 
 span{
@@ -35,13 +36,15 @@ span{
 
 .input-group{
     display: flex;
-    gap: 20px;
+    flex-direction: row;
 }
 
 .input-group > input {
+    
     padding: 4px;
-    font-size: 10px;
+    font-size: .9rem;
     margin-bottom: 10px;
+    display: inline-block;
 }
 
 input, textarea {
@@ -51,7 +54,8 @@ input, textarea {
 }
 
 textarea {
-    font-size: 12px;
+    padding: 4px;
+    font-size: 1rem;
     height: 80px;
     resize: none;
     overflow-y: scroll;
@@ -60,7 +64,7 @@ textarea {
 
 .info{
     text-align: left;
-    font-size: 8px;
+    font-size: .8rem;
     color: #96a2ad;
     margin-bottom: 10px;
 }
@@ -68,7 +72,7 @@ textarea {
 button{
     width: 100%;
     padding: 5px 0;
-    font-size: 12px;
+    font-size: 1rem;
     color: white;
     background: #87c854;
     border-radius: 5px;
