@@ -3,7 +3,7 @@
   height: 700px;
   background-color: black;
   overflow: hidden;
-  background-image: url("/assets/img/ba1.jpg");
+  background-image: url("../../../assets/img/ba1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
