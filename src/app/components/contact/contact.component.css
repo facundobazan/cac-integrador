@@ -1,0 +1,75 @@
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-form{
+    width: 500px;
+    text-align: center;
+}
+
+.title-before, .title{
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.title-before, .title-after{
+    font-size: 8px;
+}
+
+.title-after {
+    margin-bottom: 5px;
+}
+
+span{
+    text-decoration: underline;
+}
+
+.input-group{
+    display: flex;
+    gap: 20px;
+}
+
+.input-group > input {
+    padding: 4px;
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    border: 1px solid #e5e8ec;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+textarea {
+    font-size: 12px;
+    height: 80px;
+    resize: none;
+    overflow-y: scroll;
+    margin-bottom: 5px;
+}
+
+.info{
+    text-align: left;
+    font-size: 8px;
+    color: #96a2ad;
+    margin-bottom: 10px;
+}
+
+button{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 12px;
+    color: white;
+    background: #87c854;
+    border-radius: 5px;
+}
