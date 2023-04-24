@@ -1,18 +1,16 @@
-.container{
+.contact-form {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.contact-form{
-    width: 50vw;
-    min-width: 500px;
+    max-width: 500px;
+    height: 100%;
     text-align: center;
 }
 
-.title-before, .title{
+* {
+    color: #fff;
+}
+
+.title-before,
+.title {
     text-transform: uppercase;
 }
 
@@ -22,7 +20,8 @@
     margin-bottom: 5px;
 }
 
-.title-before, .title-after{
+.title-before,
+.title-after {
     font-size: 0.6rem;
 }
 
@@ -30,24 +29,25 @@
     margin-bottom: .5rem;
 }
 
-span{
+span {
     text-decoration: underline;
 }
 
-.input-group{
+.input-group {
     display: flex;
     flex-direction: row;
 }
 
-.input-group > input {
-    
+.input-group>input {
+
     padding: 4px;
     font-size: .9rem;
     margin-bottom: 10px;
     display: inline-block;
 }
 
-input, textarea {
+input,
+textarea {
     border: 1px solid #e5e8ec;
     width: 100%;
     margin-bottom: 10px;
@@ -62,14 +62,14 @@ textarea {
     margin-bottom: 5px;
 }
 
-.info{
+.info {
     text-align: left;
     font-size: .8rem;
     color: #96a2ad;
     margin-bottom: 10px;
 }
 
-button{
+button {
     width: 100%;
     padding: 5px 0;
     font-size: 1rem;

@@ -5,6 +5,11 @@
 }
 
 .navbar {
+  position: sticky;
+  z-index: 999;
+  top:0;
+  left: 0;
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
   background: #373d42;
@@ -25,11 +30,12 @@
 
 .logo-titulo {
   color: white;
-  font-size: 2.2vw;
+  font-size: 2rem;
 }
 
 .logo-img > img {
   height: 80px;
+  cursor: pointer;
 }
 
 .navbar-link {

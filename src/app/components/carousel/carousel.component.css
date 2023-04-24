@@ -1,3 +1,8 @@
+.carousel, .carousel-item {
+    height: calc(100vh - 120px);
+}
+
+
 .carousel-item {
     filter: contrast(40%);
     filter: brightness(40%);
@@ -43,7 +48,7 @@ button {
     color: #fff;
     border: 1px solid #fff;
     border-radius: 8px;
-    background-color: #00000000;
+    background-color: #00000030;
 }
 
 .container-button>button:last-child {

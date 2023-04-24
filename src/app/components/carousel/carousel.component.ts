@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent {
-
+  title = 'Conf Bs As';
 }

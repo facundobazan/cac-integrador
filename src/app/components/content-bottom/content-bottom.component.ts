@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./content-bottom.component.css']
 })
 export class ContentBottomComponent {
-
+  title = 'El lugar y la fecha';
 }

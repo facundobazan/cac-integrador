@@ -1,8 +1,7 @@
-.base {
-    width: 100vw;
-    background-color: #153b47;
-}
-.container {
+.footer {
+    position: absolute;
+    top: calc(100vh-60px);
+    background: #153b47;
     display: flex;
     justify-content: center;
     gap: 30px;

@@ -1,4 +1,6 @@
 .container {
+    border-radius: 10px;
+    top:80px;
     width: 100%;
     padding-top: 10px;
     margin-bottom: 10px;
@@ -7,11 +9,12 @@
 .title-before {
     text-align: center;
     font-size: 1rem;
-    color: #444;
+    color: #fff;
 }
 
 .title {
     text-align: center;
+    color: #fff;
     font-size: 2rem;
     font-weight: 600;
 }
@@ -30,8 +33,8 @@
     min-width: 200px;
     min-height: 400px;
     overflow: hidden;
-    border-radius: 5px;
-    border: 1px solid #eee;
+    border-radius: 10px;
+    border: 0;
 }
 
 .card-img {
