@@ -23,8 +23,8 @@ const routes: Routes = [
     loadChildren: () => import('./modules/content-bottom/content-bottom.module').then(m => m.ContentBottomModule)
   },
   {
-    path: 'header',
-    loadChildren: () => import('./modules/header/header.module').then(m => m.HeaderModule)
+    path: 'buy',
+    loadChildren: () => import('./modules/buy-ticket/buy-ticket.module').then(m => m.BuyTicketModule)
   }
 ];
 

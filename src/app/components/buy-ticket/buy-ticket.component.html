@@ -1,0 +1,33 @@
+<div class="content">
+    <form action="" method="post">
+        <fieldset>
+
+            <label for="lastName">Apellido</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Apellido" required>
+
+            <label for="firstName">Nombre</label>
+            <input type="text" name="firstName" id="firstName" placeholder="Nombre" required>
+
+            <label for="email">Correo electronico</label>
+            <input type="email" name="email" id="email" placeholder="Correo electronico" required>
+
+            <label for="phone">Telefono</label>
+            <input type="email" name="phone" id="phone" placeholder="Telefono" required>
+        </fieldset>
+
+        <label for="quantity">Cantidad</label>
+        <input type="number" name="quantity" id="quantity" placeholder="Cantidad" required>
+
+        <label for="discount">Descuento</label>
+        <select name="discount" id="discount">
+            <option value="10" selected>Particular</option>
+            <option value="30">Estudiante</option>
+            <option value="50">Orador</option>
+        </select>
+
+        <label for="total">Total</label>
+        <input type="text" name="total" id="total" readonly>
+
+        <button type="submit">Comprar</button>
+    </form>
+</div>
