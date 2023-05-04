@@ -1,44 +1,49 @@
-import { query } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ClientModel } from 'src/app/models/client.model';
 import { DiscountModel } from 'src/app/models/discount.model';
-import { ItemModel } from 'src/app/models/item.model';
 import { ProductModel } from 'src/app/models/product.model';
-import { TicketModel } from 'src/app/models/ticket.model';
 import { DiscountService } from 'src/app/services/discount.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-buy-ticket',
   templateUrl: './buy-ticket.component.html',
-  styleUrls: ['./buy-ticket.component.css']
+  styleUrls: ['./buy-ticket.component.css'],
 })
-export class BuyTicketComponent implements OnInit {
-
-  readonly products: ProductModel[];
-  readonly discounts: DiscountModel[];
-  client: ClientModel = { lastName: "", firstName: "", email: "", phone: "" };
+export class BuyTicketComponent {
+  products: ProductModel[];
+  discounts: DiscountModel[];
+  client: ClientModel = { lastName: '', firstName: '', email: '', phone: '' };
+  productSelected: ProductModel;
+  discountSelected: DiscountModel;
   quantity: number = 1;
-  price: number = 0;
-  discount: number = 0;
-  subtotal = (): number => {
-    return this.price * this.quantity;
-  }
-  total = (): number => {
-    return this.subtotal() - (this.subtotal() * this.discount);
-  };
-  // todo: consultar forma de establecer un select por default
 
-  constructor(private readonly productService: ProductService, private readonly discountService: DiscountService) {
+  constructor(
+    private readonly productService: ProductService,
+    private readonly discountService: DiscountService
+  ) {
     this.products = productService.getAll();
+    this.productSelected = this.products[0];
+    
     this.discounts = discountService.getAll();
+    this.discountSelected = this.discounts[0];
   }
 
-  ngOnInit(): void {
+  /*getDiscount(event: Event) {
+    //let result = event.target as HTMLInputElement;
+    //this.discount = this.discountService.getPercentageById(parseInt(result.value));
+  }*/
+
+  subtotal(): number {
+    return this.productSelected.price * this.quantity;
   }
 
-  getDiscount(event: Event) {
-    let result = event.target as HTMLInputElement;
-    this.discount = this.discountService.getPercentageById(parseInt(result.value));
+  total() {
+    let subtotal: number = this.subtotal();
+    return subtotal - subtotal * this.discountSelected.value;
+  }
+
+  buy() {
+    console.log('buy');
   }
 }

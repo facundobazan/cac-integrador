@@ -1,0 +1,57 @@
+.base {
+  background: #fff;
+}
+
+.inputGroup {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+select {
+  border-bottom: 1px solid #aaa;
+}
+
+input {
+  border: 1px solid #aaa;
+}
+
+button {
+  padding: 5px 20px;
+  background: rgb(245, 188, 67);
+  border-radius: 5px;
+}
+
+button:disabled {
+  background: #aaa;
+  color: #555;
+}
+
+button:hover:not(disabled) {
+  filter: none;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.credit {
+  color: darkgreen;
+}
+
+.debit {
+  color: darkred;
+}
+
+.order {
+  padding-top: 20px;
+  border-top: 1px dashed #aaa;
+  margin: 20px 0;
+}
+
+.error {
+  color: darkred;
+  font-size: .8rem;
+  margin-bottom: 10px;
+}

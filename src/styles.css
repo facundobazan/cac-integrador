@@ -26,6 +26,7 @@
       flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
+      overflow-y: scroll;
   }
 
   a:hover,

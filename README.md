@@ -28,3 +28,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # cac-integrador
 Integrador codo a codo
+
+Wiki: https://angular.io/api/forms/NgModel
+Deploy ng deploy --base-href=/cac-integrador/

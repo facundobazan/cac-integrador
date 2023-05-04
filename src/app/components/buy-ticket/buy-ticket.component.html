@@ -1,48 +1,111 @@
-<div class="content">
-    <form action="" method="post">
-        <fieldset>
+<div class="base">
+    <form (ngSubmit)="buy()">
+
+        <div class="inputGroup">
+
             <label for="product">Producto</label>
-            <select name="product" id="product" [(ngModel)]="price">
-                <option *ngFor="let product of products; index as i;" [ngValue]="product.price">
+            <select name="product" [(ngModel)]="productSelected">
+                <option *ngFor="let product of products; index as i;" [ngValue]="product">
                     {{product.description}}</option>
             </select>
-            <label>Precio: {{ price | currency }}</label>
+        </div>
 
-        </fieldset>
+        <div class="inputGroup">
 
-        <fieldset>
+            <label for="price">Precio:</label>
+            <label class="debit"> {{productSelected.price|currency}}</label>
+        </div>
+
+        <div class="inputGroup">
 
             <label for="lastName">Apellido</label>
-            <input type="text" name="lastName" id="lastName" placeholder="Apellido" required
-                [(ngModel)]="client.lastName">
+            <input type="text" name="lastName" placeholder="Apellido" required [(ngModel)]="client.lastName"
+                #lastName="ngModel">
+        </div>
+
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+
+            <div *ngIf="lastName.errors?.['required']" class="error">
+                El campo es requerido.
+            </div>
+        </div>
+
+        <div class="inputGroup">
 
             <label for="firstName">Nombre</label>
-            <input type="text" name="firstName" id="firstName" placeholder="Nombre" required
-                [(ngModel)]="client.firstName">
+            <input type="text" name="firstName" placeholder="Nombre" required [(ngModel)]="client.firstName"
+                #firstName="ngModel">
+        </div>
+
+        <div class="validator" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+
+            <div *ngIf="firstName.errors?.['required']" class="error">
+                El campo es requerido.
+            </div>
+        </div>
+
+        <div class="inputGroup">
 
             <label for="email">Correo electronico</label>
-            <input type="email" name="email" id="email" placeholder="Correo electronico" required
-                [(ngModel)]="client.email">
+            <input type="email" name="email" placeholder="Correo electronico" required [(ngModel)]="client.email"
+                #email="ngModel">
+        </div>
+
+        <div class="validator" *ngIf="email.invalid && (email.dirty || email.touched)">
+
+            <div *ngIf="email.errors?.['required']" class="error">
+                El campo es requerido.
+            </div>
+        </div>
+
+        <div class="inputGroup">
 
             <label for="phone">Telefono</label>
-            <input type="email" name="phone" id="phone" placeholder="Telefono" required [(ngModel)]="client.phone">
-        </fieldset>
+            <input type="tel" name="phone" placeholder="Telefono" required [(ngModel)]="client.phone" #phone="ngModel">
+        </div>
 
-        <label for="quantity">Cantidad</label>
-        <input type="number" name="quantity" id="quantity" placeholder="Cantidad" required [(ngModel)]="quantity"
-            min="1" max="10">
+        <div class="validator" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
 
-        <label for="discount">Descuento</label>
-        <select name="discount" id="discount" (change)="getDiscount($event)">
-            <option *ngFor="let discount of discounts;" [value]="discount.id"> {{ discount.discountName }}</option>
-        </select>
-<br>
-        <label>Subtotal: {{subtotal() | currency}}</label>
-        <br>
-        <label>Descuento: {{discount | percent}}</label>
-        <br>
-        <label>Total: {{total() | currency}}</label>
-<br>
-        <button type="submit">Comprar</button>
+            <div *ngIf="phone.errors?.['required']" class="error">
+                El campo es requerido.
+            </div>
+        </div>
+
+        <div class="inputGroup">
+
+            <label for="quantity">Cantidad</label>
+            <input type="number" name="quantity" min="1" max="10" [(ngModel)]="quantity">
+        </div>
+
+        <div class="inputGroup">
+
+            <label for="discount">Descuento</label>
+            <select name="discount" [(ngModel)]="discountSelected">
+                <option *ngFor="let discount of discounts;" [ngValue]="discount"> {{ discount.discountName }}
+                </option>
+            </select>
+        </div>
+
+        <div class="order">
+            <div class="inputGroup">
+
+                <label for="subtotal">Subtotal:</label>
+                <label class="debit">{{subtotal() | currency}}</label>
+            </div>
+
+            <div class="inputGroup">
+
+                <label for="discount">Descuento:</label>
+                <label class="credit">{{discountSelected.value | percent}}</label>
+            </div>
+
+            <div class="inputGroup bold">
+
+                <label for="total">Total:</label>
+                <label class="debit">{{total() | currency}}</label>
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="lastName.invalid || firstName.invalid || email.invalid || phone.invalid || email.invalid">Comprar</button>
     </form>
 </div>
