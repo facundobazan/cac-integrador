@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ClientModel } from 'src/app/models/client.model';
 import { DiscountModel } from 'src/app/models/discount.model';
 import { ProductModel } from 'src/app/models/product.model';
@@ -25,7 +25,8 @@ export class BuyTicketComponent {
     private readonly productService: ProductService,
     private readonly discountService: DiscountService,
     private readonly ticketService: TicketService,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly activatedRoute: ActivatedRoute
   ) {
     this.products = productService.getAll();
     this.productSelected = this.products[0];
@@ -58,9 +59,8 @@ export class BuyTicketComponent {
       discount: this.discountSelected,
     };
 
-    let purchase = this.ticketService.purchase(ticket);
+    let purchaseId = this.ticketService.purchase(ticket);
 
-    this.router.navigate(['/purchase-completed']);
-    //RouterLink
+    this.router.navigate(['purchase/order'], { queryParams: { id: purchaseId } });
   }
 }

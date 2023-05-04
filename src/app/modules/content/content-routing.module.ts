@@ -4,6 +4,7 @@ import { ContentComponent } from 'src/app/components/content/content.component';
 
 const routes: Routes = [{
   path: '',
+  title: 'content',
   component: ContentComponent
 }];
 

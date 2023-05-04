@@ -41,7 +41,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'purchase-completed',
+    path: 'purchase',
     loadChildren: () =>
       import('./modules/successful-purchase/successful-purchase.module').then(
         (m) => m.SuccessfulPurchaseModule

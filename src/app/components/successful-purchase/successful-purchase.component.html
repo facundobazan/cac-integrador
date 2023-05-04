@@ -1,7 +1,34 @@
 <div class="base">
+    <div class="ticket" *ngIf="ticket!=undefined; else elseBlock;">
 
-    <div *ngIg(ticket !=undefined)>
-    
-        {{ ticket | json }}
+        <div class="title">Compra realizada</div>
+        <label>Ticket N° {{ticket.id}}</label>
+        <label>Apellido y nombre: {{ticket.client.lastName}}, {{ticket.client.firstName}}</label>
+
+        <label>Email: {{ticket.client.email}}</label>
+        <label>Telefono: {{ticket.client.phone}}</label>
+        <label>Producto: {{ticket.items.at(0)?.product?.description}}</label>
+        <label>Cantidad: {{ticket.items.at(0)?.quantity | number}}</label>
+
+        <div class="button">
+
+            <button routerLink="">
+                Regresar
+            </button>
+        </div>
     </div>
+
+    <ng-template #elseBlock>
+        <div class="ticket">
+
+            <label>Orden de compra no encontrada.</label>
+    
+            <div class="button">
+    
+                <button routerLink="">
+                    Regresar
+                </button>
+            </div>
+        </div>
+    </ng-template>
 </div>

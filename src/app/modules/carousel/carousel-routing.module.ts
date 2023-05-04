@@ -5,6 +5,7 @@ import { CarouselComponent } from 'src/app/components/carousel/carousel.componen
 
 const routes: Routes = [{
   path: '',
+  title: 'Conferencia Buenos Aires',
   component: CarouselComponent
 }];
 

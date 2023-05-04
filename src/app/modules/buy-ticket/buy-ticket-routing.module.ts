@@ -4,6 +4,7 @@ import { BuyTicketComponent } from 'src/app/components/buy-ticket/buy-ticket.com
 
 const routes: Routes = [{
   path: '',
+  title: 'Comprar entrada',
   component: BuyTicketComponent
 }];
 

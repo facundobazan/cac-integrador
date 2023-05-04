@@ -1,0 +1,29 @@
+.ticket{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.title{
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+label {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.button{
+    margin-top: 10px;
+    text-align: center;
+}
+
+button {
+    padding: 5px 20px;
+    background: rgb(245, 188, 67);
+    border-radius: 5px;
+  }

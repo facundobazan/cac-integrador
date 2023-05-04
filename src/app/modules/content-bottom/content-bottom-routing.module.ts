@@ -4,6 +4,7 @@ import { ContentBottomComponent } from 'src/app/components/content-bottom/conten
 
 const routes: Routes = [{
   path: '',
+  title: 'Datos del evento',
   component: ContentBottomComponent
 }];
 

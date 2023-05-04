@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { TicketModel } from 'src/app/models/ticket.model';
 import { TicketService } from 'src/app/services/ticket.service';
 
@@ -8,11 +9,11 @@ import { TicketService } from 'src/app/services/ticket.service';
   styleUrls: ['./successful-purchase.component.css'],
 })
 export class SuccessfulPurchaseComponent {
-  @Input() id: number = 1;
+  private readonly id: number;
+  ticket: TicketModel | undefined;
 
-  readonly ticket: TicketModel | undefined;
-
-  constructor(private readonly ticketService: TicketService) {
+  constructor(private readonly ticketService: TicketService, private readonly activateRoute: ActivatedRoute) {
+    this.id = parseInt(activateRoute.snapshot.queryParams['id']);
     this.ticket = ticketService.getById(this.id);
   }
 }

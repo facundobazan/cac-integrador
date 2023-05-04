@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { SuccessfulPurchaseComponent } from 'src/app/components/successful-purchase/successful-purchase.component';
 
 const routes: Routes = [{
-  path: '',
+  path: 'order',
+  title: 'Compra',
   component: SuccessfulPurchaseComponent
 }];
 
