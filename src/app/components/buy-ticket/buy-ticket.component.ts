@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 import { ClientModel } from 'src/app/models/client.model';
 import { DiscountModel } from 'src/app/models/discount.model';
 import { ProductModel } from 'src/app/models/product.model';
+import { TicketModel } from 'src/app/models/ticket.model';
 import { DiscountService } from 'src/app/services/discount.service';
 import { ProductService } from 'src/app/services/product.service';
+import { TicketService } from 'src/app/services/ticket.service';
 
 @Component({
   selector: 'app-buy-ticket',
@@ -20,11 +22,12 @@ export class BuyTicketComponent {
 
   constructor(
     private readonly productService: ProductService,
-    private readonly discountService: DiscountService
+    private readonly discountService: DiscountService,
+    private readonly ticketService: TicketService
   ) {
     this.products = productService.getAll();
     this.productSelected = this.products[0];
-    
+
     this.discounts = discountService.getAll();
     this.discountSelected = this.discounts[0];
   }
@@ -44,6 +47,16 @@ export class BuyTicketComponent {
   }
 
   buy() {
-    console.log('buy');
+
+    let ticket: TicketModel = {
+      id: 0,
+      client: this.client,
+      items: [
+        { id: 1, product: this.productSelected, quantity: this.quantity },
+      ],
+      discount: this.discountSelected,
+    };
+
+    this.ticketService.purchase(ticket);
   }
 }

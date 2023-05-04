@@ -13,6 +13,7 @@ import { BuyTicketComponent } from './components/buy-ticket/buy-ticket.component
 import { FormsModule } from '@angular/forms';
 import { ProductService } from './services/product.service';
 import { DiscountService } from './services/discount.service';
+import { TicketService } from './services/ticket.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { DiscountService } from './services/discount.service';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [ProductService, DiscountService],
+  providers: [ProductService, DiscountService, TicketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
