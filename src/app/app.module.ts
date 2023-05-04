@@ -10,6 +10,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { BuyTicketComponent } from './components/buy-ticket/buy-ticket.component';
+import { FormsModule } from '@angular/forms';
+import { ProductService } from './services/product.service';
+import { DiscountService } from './services/discount.service';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,10 @@ import { BuyTicketComponent } from './components/buy-ticket/buy-ticket.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ProductService, DiscountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

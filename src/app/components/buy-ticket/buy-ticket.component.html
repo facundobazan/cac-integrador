@@ -1,33 +1,48 @@
 <div class="content">
     <form action="" method="post">
         <fieldset>
+            <label for="product">Producto</label>
+            <select name="product" id="product" [(ngModel)]="price">
+                <option *ngFor="let product of products; index as i;" [ngValue]="product.price">
+                    {{product.description}}</option>
+            </select>
+            <label>Precio: {{ price | currency }}</label>
+
+        </fieldset>
+
+        <fieldset>
 
             <label for="lastName">Apellido</label>
-            <input type="text" name="lastName" id="lastName" placeholder="Apellido" required>
+            <input type="text" name="lastName" id="lastName" placeholder="Apellido" required
+                [(ngModel)]="client.lastName">
 
             <label for="firstName">Nombre</label>
-            <input type="text" name="firstName" id="firstName" placeholder="Nombre" required>
+            <input type="text" name="firstName" id="firstName" placeholder="Nombre" required
+                [(ngModel)]="client.firstName">
 
             <label for="email">Correo electronico</label>
-            <input type="email" name="email" id="email" placeholder="Correo electronico" required>
+            <input type="email" name="email" id="email" placeholder="Correo electronico" required
+                [(ngModel)]="client.email">
 
             <label for="phone">Telefono</label>
-            <input type="email" name="phone" id="phone" placeholder="Telefono" required>
+            <input type="email" name="phone" id="phone" placeholder="Telefono" required [(ngModel)]="client.phone">
         </fieldset>
 
         <label for="quantity">Cantidad</label>
-        <input type="number" name="quantity" id="quantity" placeholder="Cantidad" required>
+        <input type="number" name="quantity" id="quantity" placeholder="Cantidad" required [(ngModel)]="quantity"
+            min="1" max="10">
 
         <label for="discount">Descuento</label>
-        <select name="discount" id="discount">
-            <option value="10" selected>Particular</option>
-            <option value="30">Estudiante</option>
-            <option value="50">Orador</option>
+        <select name="discount" id="discount" (change)="getDiscount($event)">
+            <option *ngFor="let discount of discounts;" [value]="discount.id"> {{ discount.discountName }}</option>
         </select>
-
-        <label for="total">Total</label>
-        <input type="text" name="total" id="total" readonly>
-
+<br>
+        <label>Subtotal: {{subtotal() | currency}}</label>
+        <br>
+        <label>Descuento: {{discount | percent}}</label>
+        <br>
+        <label>Total: {{total() | currency}}</label>
+<br>
         <button type="submit">Comprar</button>
     </form>
 </div>
