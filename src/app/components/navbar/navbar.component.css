@@ -47,3 +47,26 @@
 a:hover {
   color: #0a8c4d;
 }
+
+.toggle-menu {
+  position: absolute;
+  right: 25px;
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (min-width: 940px) {
+  .toggle-menu {
+    display:contents;
+  }
+}
+
+.toggle-menu:hover {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-menu>img {
+  filter: invert(1);
+}
