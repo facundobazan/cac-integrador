@@ -1,8 +1,3 @@
-.carousel, .carousel-item {
-    height: calc(100vh - 120px);
-}
-
-
 .carousel-item {
     filter: contrast(40%);
     filter: brightness(40%);
@@ -10,13 +5,11 @@
 
 .container {
     position: absolute;
-    width: 70%;
-    height: 90%;
-    display: flex;
+    width: 100%;
+    height: 100%;
     z-index: 1;
-    top: 5%;
-    left: 30%;
     display: flex;
+    right: 5%;
     flex-direction: column;
     justify-content: center;
     align-items: end;

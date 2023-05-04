@@ -1,35 +1,83 @@
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
-  * {
-      font-family: 'Poppins', sans-serif;
-      color: #222;
-      list-style: none;
-      text-decoration: none;
-      box-sizing: border-box;
-      border: 0;
-  }
+html {
+    height: 100%;
+}
 
-  body {
-      width: 100vw;
-      min-height: 100%;
-      /*background-image: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="rgb(50,50,50)" class="bi bi-lightning-charge" viewBox="0 0 20 20">    <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"/> </svg>');*/
-  }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-  .base {
-      top: calc(100vh - 80px);
-      height: calc(100vh - 80px - 60px);
-      /* body - navbar - footer */
-      box-sizing: content-box;
-      width: 100%;
-      background-color: #3a3a3a;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: center;
-      align-items: center;
-      overflow-y: scroll;
-  }
+select {
+    background: none;
+    border: 0;
+}
 
-  a:hover,
-  button:hover {
-      filter: brightness(120%) contrast(120%);
-  }
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: 0;
+}
+
+a:hover,
+button:hover {
+    filter: brightness(120%) contrast(120%);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+    font-size: 1.2rem;
+    display: grid;
+    min-height: 100%;
+    grid-template-rows: 1;
+    grid-template:
+        "navbar" 90px
+        "main" auto
+        "footer" 90px;
+}
+
+button:disabled {
+    background: #aaa;
+    color: #555;
+}
+
+button:hover:not(disabled) {
+    filter: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.credit {
+    color: darkgreen;
+}
+
+.debit {
+    color: darkred;
+}
+
+.error {
+    color: darkred;
+    font-size: .8rem;
+    margin-bottom: 10px;
+}
+
+.base {
+    grid-area: main;
+    background-color: #3a3a3a;
+    display: flex;
+    flex-flow: row nowrap;
+    min-height: calc(100vh - 90px - 90px);
+    justify-content: center;
+    align-items: center;
+}

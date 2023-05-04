@@ -1,19 +1,10 @@
-*{
-  text-decoration: none;
-  font-size: 1.2rem;
-  color: #2f7482;
-}
-
 .navbar {
-  position: sticky;
-  z-index: 999;
-  top:0;
-  left: 0;
-  width: 100%;
+  grid-area: navbar;
+  height: 100%;
+  font-size: 1.2rem;
+  background: #373d42;
   display: flex;
   flex-flow: row nowrap;
-  background: #373d42;
-  height: 80px;
   justify-content: space-around;
 }
 

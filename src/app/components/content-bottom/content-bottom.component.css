@@ -1,25 +1,34 @@
-.left, .right{
-    height: 100%;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.base {
+    display: grid;
+    grid-template:
+    "left right" 50vw / auto;
 }
 
-img {
-    flex-grow: 1;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+
+.left {
+    grid-area: left;
 }
 
 .right {
+    grid-area: right;
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    flex-grow: 1;
-    background: #373d42;
-    padding: 20px;
+    justify-content: center;
+    align-items: start;
     gap: 20px;
+    padding: 30px;
+}
+
+.left,
+.right {
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 * {
@@ -29,12 +38,10 @@ img {
 .right-title {
     font-size: 1.4rem;
     font-weight: 600;
-    margin-bottom: 10px;
 }
 
 .right-text {
     font-size: 1rem;
-    margin-bottom: 20px;
 }
 
 .right-button {
