@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { ClientModel } from 'src/app/models/client.model';
 import { DiscountModel } from 'src/app/models/discount.model';
 import { ProductModel } from 'src/app/models/product.model';
@@ -23,7 +24,8 @@ export class BuyTicketComponent {
   constructor(
     private readonly productService: ProductService,
     private readonly discountService: DiscountService,
-    private readonly ticketService: TicketService
+    private readonly ticketService: TicketService,
+    private readonly router: Router
   ) {
     this.products = productService.getAll();
     this.productSelected = this.products[0];
@@ -47,7 +49,6 @@ export class BuyTicketComponent {
   }
 
   buy() {
-
     let ticket: TicketModel = {
       id: 0,
       client: this.client,
@@ -57,6 +58,9 @@ export class BuyTicketComponent {
       discount: this.discountSelected,
     };
 
-    this.ticketService.purchase(ticket);
+    let purchase = this.ticketService.purchase(ticket);
+
+    this.router.navigate(['/purchase-completed']);
+    //RouterLink
   }
 }

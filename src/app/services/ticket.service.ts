@@ -10,15 +10,20 @@ export class TicketService {
 
   constructor() {}
 
-  purchase(ticket: TicketModel) {
+  purchase(ticket: TicketModel):number {
     ticket.id = ++this.currentId;
 
     this.tickets!.push(ticket);
-    console.info(this.tickets);
+    
+    return ticket.id;
   }
 
   getAll(): TicketModel[] {
-    console.log(this.tickets);
+    //console.log(this.tickets);
     return this.tickets!;
+  }
+
+  getById(id: number): TicketModel{
+    return this.tickets!.filter(ticket => ticket.id === id)[0];
   }
 }

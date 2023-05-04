@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductService } from './services/product.service';
 import { DiscountService } from './services/discount.service';
 import { TicketService } from './services/ticket.service';
+import { SuccessfulPurchaseComponent } from './components/successful-purchase/successful-purchase.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TicketService } from './services/ticket.service';
     ContactComponent,
     FooterComponent,
     CarouselComponent,
-    BuyTicketComponent
+    BuyTicketComponent,
+    SuccessfulPurchaseComponent
   ],
   imports: [
     BrowserModule,
