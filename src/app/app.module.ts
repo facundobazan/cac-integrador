@@ -15,6 +15,9 @@ import { ProductService } from './services/product.service';
 import { DiscountService } from './services/discount.service';
 import { TicketService } from './services/ticket.service';
 import { SuccessfulPurchaseComponent } from './components/successful-purchase/successful-purchase.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { ProfileComponent } from './components/auth/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { SuccessfulPurchaseComponent } from './components/successful-purchase/su
     FooterComponent,
     CarouselComponent,
     BuyTicketComponent,
-    SuccessfulPurchaseComponent
+    SuccessfulPurchaseComponent,
+    RegisterComponent,
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
+:root {
+    --light-gray: #aaa;
+    --light-red: #fd4e4e;
+    --light-black: #222;
+    --light-green: #50ff50;
+
+    --gray: #555;
+    --red: #f00;
+    --black: #1a1a1a;
+    --green: #0f0;
+
+    --dark-gray: #222;
+    --dark-red: #8b0000;
+    --dark-black: #000;
+    --dark-green: #006600;
+}
+
 html {
     height: 100%;
 }
@@ -34,7 +51,7 @@ button:hover {
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: #222;
+    color: var(--light-black);
     font-size: 1.2rem;
     display: grid;
     min-height: 100%;
@@ -46,8 +63,8 @@ body {
 }
 
 button:disabled {
-    background: #aaa;
-    color: #555;
+    background: var(--light-gray);
+    color: var(--gray);
 }
 
 button:hover:not(disabled) {
@@ -59,15 +76,15 @@ button:hover:not(disabled) {
 }
 
 .credit {
-    color: darkgreen;
+    color: var(--dark-green);
 }
 
 .debit {
-    color: darkred;
+    color: var(--dark-red);
 }
 
 .error {
-    color: darkred;
+    color: var(--dark-red);
     font-size: .8rem;
     margin-bottom: 10px;
 }

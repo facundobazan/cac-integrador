@@ -47,6 +47,13 @@ const routes: Routes = [
         (m) => m.SuccessfulPurchaseModule
       ),
   },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./modules/auth/auth.module').then(
+        (m) => m.AuthModule
+      ),
+  }
 ];
 
 @NgModule({
